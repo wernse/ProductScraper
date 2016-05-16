@@ -1,0 +1,12 @@
+﻿<div>hello this is the landing page </div>
+<div>
+    <div class="header">Products</div>
+    <div class="btn-group">
+        <div class="btn btn-lg btn-primary" ng-click="landing.getData()">Get Data</div>
+        <div class="btn btn-lg btn-default" ng-click="landing.scrapeData()">Scrape Data</div>
+        <div class="btn btn-lg btn-danger" ng-click="landing.deleteData()">Delete Data</div>
+    </div>
+    <div class="container">
+        <main-table data="landing.products"></main-table>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿<table class="table table-condensed table-striped">
+    <thead>
+        <tr>
+            <th ng-click="$ctrl.sortVar = 'ProductName'; $ctrl.sortDir = !$ctrl.sortDir">
+                Name
+                <span ng-if="$ctrl.sortVar == 'ProductName'">
+                    <span ng-if="$ctrl.sortDir" class="glyphicon glyphicon-triangle-top"></span>
+                    <span ng-if="!$ctrl.sortDir" class="glyphicon glyphicon-triangle-bottom"></span>
+                </span>
+            </th>
+            <th ng-click="$ctrl.sortVar = 'Price'; $ctrl.sortDir = !$ctrl.sortDir">
+                Price
+                <span ng-if="$ctrl.sortVar == 'Price'">
+                    <span ng-if="$ctrl.sortDir" class="glyphicon glyphicon-triangle-top"></span>
+                    <span ng-if="!$ctrl.sortDir" class="glyphicon glyphicon-triangle-bottom"></span>
+                </span>
+            </th>
+            <th ng-click="$ctrl.sortVar = 'Store'; $ctrl.sortDir = !$ctrl.sortDir">
+                Store
+                <span ng-if="$ctrl.sortVar == 'Store'">
+                    <span ng-if="$ctrl.sortDir" class="glyphicon glyphicon-triangle-top"></span>
+                    <span ng-if="!$ctrl.sortDir" class="glyphicon glyphicon-triangle-bottom"></span>
+                </span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="product in $ctrl.data | orderBy:$ctrl.sortVar:$ctrl.sortDir ">
+            <td>
+                {{product.ProductName}}
+            </td>
+            <td>
+                ${{product.Price | number:2}}
+            </td>
+            <td>
+                {{product.Store}}
+            </td>
+        </tr>
+    </tbody>
+</table>

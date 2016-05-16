@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+</head>
+<body>
+    <ul>
+        <li><a href="/#/TestModels">TestModels</a></li>
+    </ul>
+
+    <div ng-view></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/coreApp")
+    @Scripts.Render("~/bundles/other")
+
+
+</body>
+</html>
