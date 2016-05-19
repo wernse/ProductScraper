@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('landing')
         .component('mainTable', {
             templateUrl: '/App/Landing/directives/mainTable/mainTable.html',
             controller: mainTableController,

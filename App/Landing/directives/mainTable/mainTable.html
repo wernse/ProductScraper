@@ -15,6 +15,13 @@
                     <span ng-if="!$ctrl.sortDir" class="glyphicon glyphicon-triangle-bottom"></span>
                 </span>
             </th>
+            <th ng-click="$ctrl.sortVar = 'PreviousPrice'; $ctrl.sortDir = !$ctrl.sortDir">
+                PreviousPrice
+                <span ng-if="$ctrl.sortVar == 'PreviousPrice'">
+                    <span ng-if="$ctrl.sortDir" class="glyphicon glyphicon-triangle-top"></span>
+                    <span ng-if="!$ctrl.sortDir" class="glyphicon glyphicon-triangle-bottom"></span>
+                </span>
+            </th>
             <th ng-click="$ctrl.sortVar = 'Store'; $ctrl.sortDir = !$ctrl.sortDir">
                 Store
                 <span ng-if="$ctrl.sortVar == 'Store'">
@@ -31,6 +38,9 @@
             </td>
             <td>
                 ${{product.Price | number:2}}
+            </td>
+            <td>
+                <span ng-if="product.PreviousPrice != 0.00">${{product.PreviousPrice | number:2}}</span>
             </td>
             <td>
                 {{product.Store}}

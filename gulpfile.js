@@ -7,14 +7,40 @@ var gulp = require('gulp'),
     templateCache = require('gulp-angular-templatecache'),
     ngAnnotate = require('gulp-ng-annotate'),
     concat = require('gulp-concat'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    karma = require('karma').server;
 
 /*
 This file in the main entry point for defining Gulp tasks and using Gulp plugins.
 Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
 */
 
+
+karmaConfig = {
+    "files": [
+    'Scripts/angular.min.js',
+    'Scripts/angular-mocks.js',
+    //'App/Landing/**/*Module.js',
+    //'App/Landing/**/*Factory.js',
+    //'App/Landing/**/*Ctrl.js',
+
+    'Tests/spec/**/*.js',
+    ],
+    "singleRun": false,
+    "frameworks": ["jasmine"],
+    "browsers": ["Chrome"]
+}
+
+
+/**
+ * Watch for file changes and re-run tests on each change
+ */
+
 gulp.task('default', ['watch']);
+
+gulp.task('tdd', function (done) {
+    karma.start(karmaConfig, done);
+});
 
 gulp.task('templates', function () {
     return gulp.src('App/**/*.html')
@@ -34,4 +60,5 @@ gulp.task('watch', function () {
     console.log("watch")
     gulp.watch(['Content/Site.scss', 'App/**/*.scss'], ['styles']);
     gulp.watch('App/**/*.html', ['templates']);
+    gulp.watch(["Tests/spec/**/*.js"], ["tdd"]);
 });
