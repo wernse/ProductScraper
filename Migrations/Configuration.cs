@@ -1,11 +1,7 @@
 namespace angularJS.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<angularJS.Models.ProductContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<angularJS.DbRepository.ProductContext>
     {
         public Configuration()
         {
@@ -13,7 +9,7 @@ namespace angularJS.Migrations
             ContextKey = "angularJS.Models.ProductContext";
         }
 
-        protected override void Seed(angularJS.Models.ProductContext context)
+        protected override void Seed(angularJS.DbRepository.ProductContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -5,12 +5,11 @@
         .module('landing')
         .component('mainTable', {
             templateUrl: '/App/Landing/directives/mainTable/mainTable.html',
-            controller: mainTableController,
+            controller: ['$scope',mainTableController],
             bindings: {
                 data: '<',
             }
         });
-    mainTable.$inject = ['$scope'];
 
     function mainTableController($scope) {
         var ctrl = this;

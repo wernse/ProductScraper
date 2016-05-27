@@ -1,13 +1,8 @@
-﻿using angularJS.Models;
-using angularJS.Models.ProductData;
-using System;
+﻿using angularJS.Models.ProductData;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
+using angularJS.DbRepository;
 
 namespace angularJS.Controllers
 {
@@ -20,6 +15,7 @@ namespace angularJS.Controllers
         // GET: api/GetData
         ///<summary>
         ///Gets all data from the product table
+        ///Need to refactor to view model object uncouple with product
         ///</summary>
         public ActionResult GetData()
         {

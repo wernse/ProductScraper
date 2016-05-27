@@ -1,6 +1,8 @@
-﻿var app = angular.module('app', ['ngRoute','landing']);
-
-app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+﻿angular.module('app', [
+    'ngRoute',
+    'landing'
+])
+    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
     .when('/', {
         templateUrl: '/App/Landing/landing.html',

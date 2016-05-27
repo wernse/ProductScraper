@@ -20,11 +20,11 @@ karmaConfig = {
     "files": [
     'Scripts/angular.min.js',
     'Scripts/angular-mocks.js',
-    //'App/Landing/**/*Module.js',
-    //'App/Landing/**/*Factory.js',
-    //'App/Landing/**/*Ctrl.js',
+    'App/Landing/**/*Module.js',
+    'App/Landing/**/*Factory.js',
+    'App/Landing/**/*Ctrl.js',
 
-    'Tests/spec/**/*.js',
+    'App/**/*.spec.js',
     ],
     "singleRun": false,
     "frameworks": ["jasmine"],
@@ -60,5 +60,5 @@ gulp.task('watch', function () {
     console.log("watch")
     gulp.watch(['Content/Site.scss', 'App/**/*.scss'], ['styles']);
     gulp.watch('App/**/*.html', ['templates']);
-    gulp.watch(["Tests/spec/**/*.js"], ["tdd"]);
+    gulp.watch(["App/**/*.spec.js"], ["tdd"]);
 });
